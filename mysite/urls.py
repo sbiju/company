@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from companies.views import CompanyListApiView
+from companies.views import CompanyListApiView, EmployeeListApiView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/list/', CompanyListApiView.as_view(), name='company_list'),
+    url(r'^api/company/', CompanyListApiView.as_view(), name='company_list'),
+    url(r'^api/employee/', EmployeeListApiView.as_view(), name='employee_list'),
 ]
